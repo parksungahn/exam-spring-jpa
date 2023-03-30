@@ -30,6 +30,9 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer> {
     List<Customer> findByVip(String value1, String value2);
 
     //--native 기존 쿼리방법 사용시, primary_Grade 실제생성된 컬럼
-    @Query(value="SELECT * from Customer where name = ?1 and primary_grade = ?2", nativeQuery=true)
+//    @Query(value="SELECT * from Customer where name = ?1 and primary_grade = ?2", nativeQuery=true)
+
+    String sql = "SELECT * from Customer where name = ?1 and primary_grade = ?2";
+    @Query(value=sql, nativeQuery=true)
     List<Customer> findByVip2(String value1, String value2);
 }
