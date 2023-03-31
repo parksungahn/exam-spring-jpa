@@ -101,6 +101,7 @@ public class CustomerController {
 
     //--################################################### 저장, 수정
 
+    //--@RequestBody 없으면 쿼리스트링전송가능.
     //--추가 http://localhost:8080/customer?name=홍길동1&address=서울시1&primaryGrade=1
     @PostMapping("/customer")
     public Customer postCustomer(Customer customer)
