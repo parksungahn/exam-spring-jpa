@@ -2,6 +2,7 @@ package com.example.examspringjpa.controller;
 
 
 import com.example.examspringjpa.dao.CustomerRepository;
+import com.example.examspringjpa.dao.vo_customer_dept;
 import com.example.examspringjpa.entity.Customer;
 import com.oracle.svm.core.annotate.Delete;
 import org.springframework.web.bind.annotation.*;
@@ -124,4 +125,20 @@ public class CustomerController {
     }
 
 
+
+
+    //--jpql 쿼리
+    @GetMapping("/dept/join1")
+    public List<Object[]> searchJPQL2(int id)
+    {
+        return (List<Object[]>)repository.searchJPQL2(id);
+    }
+
+
+    //--native 쿼리
+    @GetMapping("/dept/join2")
+    public List<vo_customer_dept> searchNativeSQL(int id)
+    {
+        return (List<vo_customer_dept>)repository.searchNativeSQL(id);
+    }
 }
