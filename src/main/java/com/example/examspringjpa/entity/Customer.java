@@ -60,4 +60,8 @@ public class Customer {
     public void setDept_code(String dept_code) {
         this.dept_code = dept_code;
     }
+
+    @ManyToOne
+    @JoinColumn(name="dept_code")
+    Dept dept;
 }
